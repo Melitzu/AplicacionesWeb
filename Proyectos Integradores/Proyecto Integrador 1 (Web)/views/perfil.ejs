@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Perfil</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0'><link rel="stylesheet" href="/perfil.css">
+  <link rel="stylesheet" href="cursos.css"/>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+  <nav class="navbar" id="navbar">
+    <span class="hamburger-btn material-symbols-rounded">menu</span>
+    <a href="#" class="logo">
+      <img src="" alt="logo">
+      <h2>Logo</h2>
+    </a>
+    <ul class="links">
+      <span class="close-btn material-symbols-rounded">close</span>
+      <li><a href="#miscursos">Mis Cursos</a></li>
+      <li><a href="#disponibles">Cursos Disponibles</a></li>
+        <% if (isAdmin) { %>
+    <li><a href="/ingresar-cursos">Ingresar Curso</a></li>
+    <li><a href="/eliminar-cursos">Eliminar Curso</a></li>
+  <% } %>
+    </ul>
+    <a href="/cerrar-sesion">Cerrar Sesión</a>
+    <a href="#" class="img-profile">
+      <img src="" alt="img-profile">
+    </a>
+  </nav>
+
+  <div class="modal-wrapper" id="modal">
+    <div class="modal-contenido">
+      <div class="modal-content-inner">
+      <!-- Contenido del formulario de inicio de sesión aquí -->
+  </div>
+</div>
+</div>
+</header>
+<div class="auction">
+  <div class="title">
+    <p id="cursos" class="titlebold">Cursos Disponibles</p>
+  </div>
+  <div class="curso-grid">
+    <% cursos.forEach((curso) => { %>
+      <div class="curso-item">
+          <div class="curso-imagen">
+            <img src="<%= curso.imagen %>" alt="<%= curso.nombre %>">
+          </div>
+          <div class="curso-info">
+            <h3 class="curso-nombre"><%= curso.nombre %></h3>
+            <p class="curso-descripcion"><%= curso.descripcion %></p>
+          </div>
+          <!-- Modificar la acción del formulario para que apunte al formulario del curso específico -->
+          <form action="/curso/<%= curso._id %>/formulario" method="GET">
+            <button type="submit" id="boton-inscripcion">Inscribirme al curso</button>
+          </form>
+    <% }); %>
+  </div>
+  </div>
+</div>
+
+
+<div id="disponibles" class="discover">
+  <div class="discover-title">
+    <p>Cursos Disponibles</p>
+  </div>
+  <div class="discover-items">
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/ZTZz9t0/Erkan-Erdil-Concept-art-of-collosal-dark-scaled-huge-winged-fir-09384960-3c02-48f6-ad40-76d179a7e0a3.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/SrNRC0b/Erkan-Erdil-angry-soviet-officer-shouting-his-soldiers8k-octane-7b802966-9d4e-4c6e-ac37-d4f751419081.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/2KsmyYm/m-djoourney.png" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/VLfJ41h/MR-ROBOT-two-cyberpunk-cowboys-dueling-6ae4203d-3539-4033-a9d9-80d747ac6498.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/J5QHZwY/MR-ROBOT-cyberpunk-rose-with-foggy-weather-5eb12baa-e7f6-4c4f-9cba-9654c0de3f51.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/Trpxy8p/2123.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/2FGw8Fc/Erkan-Erdil-male-warrior-with-huge-katana-fighting-hordes-of-en-02ca9519-3e0d-4aa5-9d70-f16ef0b0a0ff.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+    <div class=item>
+      <img class="item-img" src="https://i.ibb.co/7Cc7PnV/Erkan-Erdil-futuristic-Tiger-I-tank-fires-explosive-shell-to-bu-b9868ef6-7525-493e-b0f5-0bb3200e5abb.png" alt="unsplash-OG44d93i-NJk" border="0">
+      <div class="item-title">
+        <p>Lorem Ipsum</p>
+        <button class="item-button">Entrar</button>
+      </div>
+      <p class="item-date">Ends in 01.34.45</p>
+    </div>
+  </div>
+</div>
+<p></p>
+<div class="footer2" >   
+<div class="footer-navigate">
+  <div class="nav">
+        <h5>Cursos</h5>
+        <p>Inicio</p>
+        <p>Actividades</p>
+        <p>Descubre</p>
+      </div>
+      <div class="nav">
+        <h5>Empresa</h5>
+        <p>Acerca de nosotros</p>
+        <p>Servicios</p>
+      </div>
+      <div class="nav">
+        <h5>Contacto</h5>
+        <p>Facebook</p>
+        <p>Instagram</p>
+        <p>Twitter</p>
+      </div>
+    </div></div>
+
+
+<!-- partial -->
+  <script  src="/index.js"></script>
+  <script src="https://releases.jquery.com/git/jquery-git.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+img {
+    width: 200px;
+}
+
+.curso-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .curso-item {
+    width: calc(33.33% - -127px);
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    height: 300px;
+    border-radius: 14px;
+}
+  
+  .curso-img {
+    max-width: 100%;
+    max-height: 200px; /* Ajusta la altura máxima de la imagen */
+  }
+  
+  .curso-nombre {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-top: 23px;
+}
+
+
+.curso-descripcion {
+    font-size: 14px;
+    margin-top: -225px;
+    margin-left: 233px;
+    color: white;
+}
+  /* Clase para la imagen en el curso */
+  .curso-imagen {
+    width: 200px; /* Tamaño deseado para la imagen */
+    height: 200px; /* Tamaño deseado para la imagen */
+  }
+  
+  button#boton-inscripcion {
+    margin-left: 317px;
+}

@@ -1,0 +1,11 @@
+<h2>Cursos Disponibles para Eliminar</h2>
+<ul>
+  <% cursos.forEach((curso) => { %>
+    <li>
+      <span><%= curso.nombre %></span>
+      <form method="post" action="/eliminar-curso/<%= curso._id %>">
+        <button type="submit">Eliminar</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>

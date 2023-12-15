@@ -1,0 +1,93 @@
+//WebApp N1 
+//Desarrollo de programa, simulando menú de comida rapida
+//Melián Lucabeche 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA SABROSITA EL MEJOR LUGAR DE COMIDA OSORNINA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .menu-item {
+      cursor: pointer;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    #order-summary {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>LA SABROSITA EL MEJOR LUGAR DE COMIDA OSORNINA</h1>
+
+<div class="menu-item" onclick="selectItem('Hamburguesa', 3000)">Tu exquista Hamburguesa cuesta - $3.000 CLP</div>
+<div class="menu-item" onclick="selectItem('Pizza', 4200)">¿Vas por Pizza? - $4.200 CLP</div>
+<div class="menu-item" onclick="selectItem('Hot Dog', 2500)">¿Te tinca un H o t Dog? - $2.500 CLP </div>
+<div class="menu-item" onclick="selectItem('Ensalada', 1600)">¿asi que Ensalada?... - $1.600 CLP</div>
+<div class="menu-item" onclick="selectItem('Papas Fritas', 2000)">¿Vas por una opción segura? Papas Fritas - $2.000 CLP</div>
+<div id="order-summary"></div>
+<button onclick="calculateOrder()">Calcular pedido</button>
+
+<script>
+  let selectedItems = [];
+
+  function selectItem(itemName, itemPrice) {
+    const quantity = prompt(`¿Cuántos ${itemName} desea comprar?`, '1');
+    if (quantity !== null && !isNaN(quantity) && parseInt(quantity) > 0) {
+      const total = itemPrice * parseInt(quantity);
+      selectedItems.push({ name: itemName, total: total });
+      updateOrderSummary();
+    } else {
+      alert('Por favor, ingrese una cantidad válida.');
+    }
+  }
+  function updateOrderSummary() {
+    const orderSummaryDiv = document.getElementById('order-summary');
+    orderSummaryDiv.innerHTML = '<h2>Resumen de su Pedido</h2>';
+    
+    let netTotal = 0;
+
+    for (const item of selectedItems) {
+      orderSummaryDiv.innerHTML += `<p>${item.name}: $${item.total.toFixed(2)}</p>`;
+      netTotal += item.total;
+    }
+
+    const iva = netTotal * 0.19;
+    const totalAmount = netTotal + iva;
+
+    orderSummaryDiv.innerHTML += `<p>Valor Neto: $${netTotal.toFixed(2)}</p>`;   //Costo neto del producto
+    orderSummaryDiv.innerHTML += `<p>IVA (19%): $${iva.toFixed(2)}</p>`;   //Porcentaje del valor con IVA
+    orderSummaryDiv.innerHTML += `<p>Total a Pagar: $${totalAmount.toFixed(2)}</p>`;  //Valor del producto Total (I)
+  }
+totalamou
+  function calculateOrder() {
+    if (selectedItems.length === 0) {
+      alert('Se necesita que escogas un producto para poder calcular el valor total');
+    } else {
+      updateOrderSummary();
+    }
+  }
+</script>
+</body>
+</html>
+
+
+Hamburguesa: 3000$
+Pizza 4200$
+Hot Dog 2500$
+Ensalada 1600$

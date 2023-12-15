@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="index.js"></script>
+  <script src="https://releases.jquery.com/git/jquery-git.js"></script>
+</head>
+<body>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+
+      <div class="form-box login">
+        <div class="form-content">
+          <h2>Inicia sesion</h2>
+
+          <form action="/login" method="POST">
+            <div class="input-field">
+              <input type="text" name="email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="password" required>
+              <label>Password</label>
+            </div>
+            <a href="#" class="forgot-pass-link">Forgot password?</a>
+            <button type="submit" id="login-button">Iniciar Sesión</button>
+          </form>
+          <div class="bottom-link">
+            Don't have an account?
+            <button id="registro">Registrate</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
